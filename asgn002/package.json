@@ -1,0 +1,16 @@
+{
+  "name": "asgn002",
+  "version": "1.0.0",
+  "description": "Assignement 002",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Blaise Pascal",
+  "license": "ISC"
+}
