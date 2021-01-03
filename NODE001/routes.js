@@ -10,7 +10,7 @@ const requestHandler = (req, res) => {
     res.write("<title>NODE001</title>");
     res.write("</head>");
     res.write("<body>");
-    res.write("<h1>Enter a message:</h1>");
+    res.write("<h1>Enter a [new] message:</h1>");
     res.write(
       '<form action="/message" method="POST">Message: <input type="text" name="message"><button type="submit">Kuldes</button></form>'
     );
@@ -31,7 +31,7 @@ const requestHandler = (req, res) => {
       const msg = parsedBody.split("=")[1];
       // Instead of sync write we use async, but in this case (of course) we need
       // a callabck as well...
-      fs.writeFile("msg.TXT", msg, (err) => {
+      fs.writeFile("NODE001/msg.TXT", msg, (err) => {
         if (err !== null) {
           console.err("File writing FAILED.");
           res.writeHead(500, { Location: "/" });
