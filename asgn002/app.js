@@ -1,9 +1,16 @@
 const express = require("express");
 app = express();
 
-app.use("/users", (req, res, next) => {
+app.use("/", (req, res, next) => {
+  console.log("This always runs!");
+  next();
+});
+
+app.use("/add-product", (req, res, next) => {
   console.log("Second MDLWR");
-  res.send("<h1>This is the first[second] assignment is solved!</h1>");
+  res.send(
+    '<form><input type="text" name="title"/><input type="submit" value="Add product"/></form>'
+  );
 });
 
 app.use("/", (req, res, next) => {
