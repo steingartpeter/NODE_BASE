@@ -1,17 +1,21 @@
 // Import Express
 const express = require("express");
+const path = require("path");
 
-const adminRouter = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRouter = require("./routes/shop");
 
 //Instantiate Express
 const app = express();
 
-app.use("/admin", adminRouter);
+// STATIC file serving middleware
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/admin", adminData.routes);
 app.use(shopRouter);
 // Last stand, where we handl not found pages...
 app.use((req, res, next) => {
-  res.status(404).send("<h2>PAGE NOT FOUND!</h2>");
+  res.status(404).sendFile(path.join(__dirname, "views", "pgeNotFound.html"));
 });
 
 // // Express most general middleware
