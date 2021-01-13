@@ -1,0 +1,13 @@
+<%- include('includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+<h1>Current users</h1>
+<% if(usrs.length > 0){ %>
+    <ul>
+        <% usrs.forEach((u) => { %>
+            <li><%= u %></li>
+        <% }); %>
+    </ul>
+<%  } else {%>
+    <h2>No users exist yet ...</h2>
+<%  } %>
+<%- include('includes/end.ejs') %>
