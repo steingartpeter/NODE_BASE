@@ -1,0 +1,8 @@
+body {
+  background-color: antiquewhite;
+}
+.prodCard {
+  width: 250px;
+  height: 420px;
+  box-shadow: 4px 4px 10px #050505;
+}
